@@ -28,31 +28,21 @@ def get_next_number(start, direction):
             else:
                 return start + 3
 
-
-count = 0
-# Strips the newline character
 for line in Lines:
     for letter in line:
         lst.append(letter)
-    count += 1
-    print("Line{}: {}".format(count, line.strip()))
-    print(lst)
 
 for x in lst:
     if x == "R":
-        print("right")
         start = get_next_number(start, x)
     elif x == "L":
-        print("left")
         start = get_next_number(start, x)
     elif x == "U":
-        print("up")
         start = get_next_number(start, x)
     elif x == "D":
-        print("down")
         start = get_next_number(start, x)
     else:
         code.append(start)
-        print("Current number: ", start)
 
+code.append(start)
 print("Code: ", code)
