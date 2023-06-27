@@ -6,7 +6,6 @@ code = []
 
 
 def get_next_number(start, direction):
-    print("Start: ", start, "Direction: ", direction)
     match direction:
         case "R":
             if start == 1 or start == 4 or start == 9 or start == 12 or start == 13:
@@ -64,29 +63,20 @@ def number_to_letter(number):
             return "D"
 
 
-
 for line in Lines:
     for letter in line:
         lst.append(letter)
 
-print(lst)
-
 for x in lst:
     if x == "R":
         start = get_next_number(start, x)
-        print(start)
     elif x == "L":
         start = get_next_number(start, x)
-        print(start)
     elif x == "U":
         start = get_next_number(start, x)
-        print(start)
     elif x == "D":
         start = get_next_number(start, x)
-        print(start)
     else:
-        print("End of line")
         code.append(number_to_letter(start))
-    print(start)
 
 print("Code: ", code)
